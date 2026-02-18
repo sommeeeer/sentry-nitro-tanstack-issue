@@ -8,6 +8,9 @@ import { nitro } from "nitro/vite";
 import { sentryTanstackStart } from "@sentry/tanstackstart-react";
 
 const config = defineConfig({
+  build: {
+    sourcemap: true,
+  },
   plugins: [
     devtools(),
     nitro(),
@@ -29,9 +32,11 @@ const config = defineConfig({
         ignore: ["**/node_modules/**"],
         filesToDeleteAfterUpload: ["./.output/**/*.map"],
       },
+      debug: true,
     }),
   ],
   nitro: {
+    sourcemap: true,
     preset: "aws-lambda",
     awsLambda: {
       streaming: true,
