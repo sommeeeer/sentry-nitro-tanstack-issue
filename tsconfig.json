@@ -14,6 +14,7 @@
     "verbatimModuleSyntax": false,
     "noEmit": true,
 
+    "esModuleInterop": true,
     /* Linting */
     "skipLibCheck": true,
     "strict": true,
